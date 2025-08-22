@@ -1,0 +1,18 @@
+format:
+	/* 在此部分描述链接的方法 */
+	code(align:1, logic:0x24,      file:0x24);
+	data(align:4, logic:stack_end, file:code_end);
+
+file:
+	/* 在这一部分列出命令行中写不完的 .obj 文件和 .lib 文件 */
+	/* 此外，这一部分也可以写成完整路径。 */
+	/* 椺丗  c:/osask/gg00libc.lib;  */
+	../../z_tools/haribote/harilibc.lib;
+	../../z_tools/haribote/golibc.lib;
+
+label:
+	/* 必须指定要链接的标签 */
+	/* 请认为只需要指定入口点即可 */
+	_HariStartup;
+
+	/* 上述3个部分的顺序不能被更改！ */
